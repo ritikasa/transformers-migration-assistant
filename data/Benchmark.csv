@@ -1,0 +1,31 @@
+Authentication,Expected migration,Component
+batch_decode() and decode() were different,use decode() for both single and batch decoding,Tokenization
+tokenizer.encode_plus(...),use tokenizer.__call__(...),Tokenization
+apply_chat_template(...) returns input_ids,apply_chat_template(...) returns BatchEncoding dictionary,Tokenization
+special_tokens_map.json stored special tokens ,tokenizer_config.json stores special tokens,Tokenizer serialization
+added_tokens.json stored added tokens,tokenizer.json stores added tokens,Tokenizer serialization
+add_bos_token and add_eos_token saved in tokenizer_config.json,not saved there anymore and defined by tokenizer class or tokenizer.json if it exists,Tokenizer serialization
+LayoutLM tokenizer implementation,uses BertTokenizer,Tokenization
+LED tokenizer implementation,uses BartTokenizer,Tokenization
+Longformer tokenizer implementation,uses RobertaTokenizer,Tokenization
+LXMert tokenizer implementation,uses BertTokenizer,Tokenization
+MT5 tokenizer implementation,uses T5Tokenizer,Tokenization
+MVP tokenizer implementation,uses BartTokenizer,Tokenization
+special_tokens_map included additional_special_tokens,special_tokens_map only stores named special tokens. extra_special_tokens for extra special tokens,Tokenization
+special_tokens_map_extended / all_special_tokens_extended,removed. AddedToken can be accessed from _special_tokens_map or _extra_special_tokens,Tokenization
+additional_special_tokens,automatically converted to extra_special_tokens during initialization,Tokenization
+additional_special_tokens_ids,extra_special_tokens_ids,Tokenization
+SpecialTokensMixin,merged into PreTrainedTokenizerBase,Tokenization
+use_auth_token,token,Authentication
+sanitize_special_tokens(),removed,Tokenization
+prepare_seq2seq_batch(),__call__(...) with text_target=...,Tokenization
+BatchEncoding.words(),word_ids(),Tokenization
+create_token_type_ids_from_sequences() in base class,removed from base class and subclasses needing it should implement it directly,Tokenization
+"prepare_for_model(), build_inputs_with_special_tokens(), truncate_sequences() in base class",moved to tokenization_python.py for PythonBackend. TokenizersBackend uses tokenize() / encode(),Tokenization
+"_switch_to_input_mode(), _switch_to_target_mode(), as_target_tokenizer()",use __call__(...) with text_target=....,Tokenization
+parse_response(),removed from base class,Tokenization
+"get_text_features(), get_image_features(), get_audio_features(), and get_video_features() returned only a pooled embedding tensor",Return BaseModelOutputWithPooling or subclass. when previous code needs pooled tensor then use return_dict=True and access .pooler_output,Feature extraction
+load_in_4bit argument,use quantization_config,Quantization
+load_in_8bit argument,quantization_config,Quantization
+AutoModelWithLMHead,"use AutoModelForCausalLM, AutoModelForMaskedLM, or AutoModelForSeq2SeqLM depending on the model type",Auto class
+AutoModelForVision2Seq,use AutoModelForImageTextToText,Auto class

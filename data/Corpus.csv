@@ -1,0 +1,8 @@
+Version,Document Type,Component,Official Source URL,Why Included
+v5,Migration Guide,General,https://github.com/huggingface/transformers/blob/main/MIGRATION_GUIDE_V5.md,Documented breaking changes
+v4.27.1,API Docs,Trainer,https://huggingface.co/docs/transformers/v4.27.1/en/main_classes/trainer,Pre-v5 Trainer reference 
+v4.35.2,API Docs,Trainer,https://huggingface.co/docs/transformers/v4.35.2/en/main_classes/trainer,Mid-v4 Trainer reference
+v5.0.0,API Docs,Trainer,https://huggingface.co/docs/transformers/v5.0.0/en/main_classes/trainer,Target v5 Trainer reference
+v4.27.1,API Docs,Tokenizer,https://huggingface.co/docs/transformers/v4.27.1/en/main_classes/tokenizer,Legacy v4 Tokenizer reference
+v5.0.0,API Docs,Tokenizer,https://huggingface.co/docs/transformers/v5.0.0/en/main_classes/tokenizer,Target v5 Tokenizer reference
+v4.32.1,API Docs,Generation,https://huggingface.co/docs/transformers/v4.32.1/en/main_classes/text_generation,Legacy Generation configuration reference
